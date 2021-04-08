@@ -11,7 +11,7 @@ function Step1(props) {
           <input
             type="radio"
             name="si"
-            value={props.getState("si", "")}
+            value={props.getState("tetto", "si")}
             onChange={props.handleChange}
           />
           Si
@@ -20,7 +20,7 @@ function Step1(props) {
           <input
             type="radio"
             name="no"
-            value={props.getState("no", "")}
+            value={props.getState("tetto", "no")}
             onChange={props.handleChange}
           />
           No
