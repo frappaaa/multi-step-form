@@ -1,9 +1,9 @@
-import { MultiStepForm } from './components/MultiStepForm';
+import { MultiStepForm } from "./components/MultiStepForm";
 
 export default function App() {
-	return (
-		<div className="App">
-			<MultiStepForm />
-		</div>
-	);
+  return (
+    <div className="App">
+      <MultiStepForm />
+    </div>
+  );
 }
