@@ -1,38 +1,119 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import Map from "./Map";
 
 const MultiStepForm = () => {
   return (
     <div>
-      <h1>Any place in your app!</h1>
       <Formik
-        initialValues={{ email: "", password: "" }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
-          }
-          return errors;
+        initialValues={{
+          tetto: "",
+          area: "",
+          amianto: "",
+          nome: "",
+          cognome: "",
+          email: "",
+          telefono: "",
+          privacy: false,
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values) => {
+          await new Promise((r) => setTimeout(r, 500));
+          alert(JSON.stringify(values, null, 2));
         }}
       >
-        {({ isSubmitting }) => (
-          <Form>
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
+        {({ values }) => (
+          <Form className="text-center" autoComplete="off">
+            <div id="step1" className="mt-10">
+              <div id="my-radio-group">
+                Hai un tetto di almeno 2500m<sup>2</sup> a un uso non
+                residenziale?
+              </div>
+              <div role="group" aria-labelledby="my-radio-group">
+                <label>
+                  <Field type="radio" name="tetto" value="Si" required />
+                  Si
+                </label>
+                <label>
+                  <Field type="radio" name="tetto" value="No" required />
+                  No
+                </label>
+              </div>
+            </div>
+            <div id="step2" className="mt-10">
+              <h3>Individua il tuo tetto sulla mappa e traccia l'area</h3>
+              <Map />
+              <p>Valore Area: {values.area}</p>
+            </div>
+            <div id="step3" className="mt-10">
+              <div id="my-radio-group">
+                Il tetto è in amianto o ne contiene in parte?
+              </div>
+              <div role="group" aria-labelledby="my-radio-group">
+                <label>
+                  <Field type="radio" name="amianto" value="Si" required />
+                  Si
+                </label>
+                <label>
+                  <Field type="radio" name="amianto" value="No" required />
+                  No
+                </label>
+              </div>
+            </div>
+            <div id="step4" className="mt-10">
+              <Field
+                type="text"
+                name="nome"
+                label="nome"
+                placeholder="Nome"
+                required
+              />
+              <Field
+                type="text"
+                name="cognome"
+                label="cognome"
+                placeholder="Cognome"
+                required
+              />
+              <div>
+                <Field
+                  type="email"
+                  name="email"
+                  label="email"
+                  placeholder="Email"
+                  required
+                />
+                <ErrorMessage name="email" component="div" />
+              </div>
+              <div>
+                <Field
+                  type="tel"
+                  name="telefono"
+                  label="telefono"
+                  placeholder="Telefono"
+                />
+                <ErrorMessage name="telefono" component="div" />
+              </div>
+              <div className="flex items-center space-x-2">
+                <p>
+                  Accetta la nostra{" "}
+                  <a href="https://www.prova.com" className="underline">
+                    Privacy Policy
+                  </a>
+                </p>
+                <Field
+                  type="checkbox"
+                  name="privacy"
+                  required
+                  label={{ label: "Accetta la nostra privacy policy" }}
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="bg-blue-300 py-2 px-7  mt-4 rounded-md uppercase"
+            >
+              Invia
             </button>
           </Form>
         )}
