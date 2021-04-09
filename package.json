@@ -5,10 +5,12 @@
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@mapbox/mapbox-gl-draw": "^1.2.2",
+    "@mapbox/mapbox-gl-geocoder": "^4.7.0",
     "@tailwindcss/forms": "^0.3.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@turf/bbox-polygon": "^6.3.0",
     "formik": "^2.2.6",
     "mapbox-gl": "^2.2.0",
     "react": "^17.0.2",

@@ -23,7 +23,7 @@ const MultiStepForm = () => {
       >
         {({ values }) => (
           <Form className="text-center" autoComplete="off">
-            <div id="step1" className="mt-10">
+            <div id="step1" className="mt-10 rounded-md shadow-md border-2 p-4">
               <div id="my-radio-group">
                 Hai un tetto di almeno 2500m<sup>2</sup> a un uso non
                 residenziale?
@@ -39,12 +39,10 @@ const MultiStepForm = () => {
                 </label>
               </div>
             </div>
-            <div id="step2" className="mt-10">
-              <h3>Individua il tuo tetto sulla mappa e traccia l'area</h3>
+            <div id="step2" className="mt-10 rounded-md shadow-md border-2">
               <Map />
-              <p>Valore Area: {values.area}</p>
             </div>
-            <div id="step3" className="mt-10">
+            <div id="step3" className="mt-10 rounded-md shadow-md border-2 p-4">
               <div id="my-radio-group">
                 Il tetto è in amianto o ne contiene in parte?
               </div>
@@ -59,11 +57,15 @@ const MultiStepForm = () => {
                 </label>
               </div>
             </div>
-            <div id="step4" className="mt-10">
+            <div
+              id="step4"
+              className="mt-10 rounded-md shadow-md border-2 p-4 flex flex-wrap"
+            >
               <Field
                 type="text"
                 name="nome"
                 label="nome"
+                className="w-full"
                 placeholder="Nome"
                 required
               />
@@ -71,10 +73,11 @@ const MultiStepForm = () => {
                 type="text"
                 name="cognome"
                 label="cognome"
+                className="w-full"
                 placeholder="Cognome"
                 required
               />
-              <div>
+              <div className="w-full">
                 <Field
                   type="email"
                   name="email"
@@ -84,7 +87,7 @@ const MultiStepForm = () => {
                 />
                 <ErrorMessage name="email" component="div" />
               </div>
-              <div>
+              <div className="w-full">
                 <Field
                   type="tel"
                   name="telefono"
