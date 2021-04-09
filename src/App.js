@@ -1,4 +1,5 @@
 import MultiStepForm from "./components/MultiStepForm";
+import "./index.css";
 
 export default function App() {
   return (

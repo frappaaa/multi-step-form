@@ -1,6 +1,10 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import Map from "./Map";
+import { Formik, Form } from "formik";
+
+import Step1 from "./steps/Step1";
+import Step2 from "./steps/Step2";
+import Step3 from "./steps/Step3";
+import Step4 from "./steps/Step4";
 
 const MultiStepForm = () => {
   return (
@@ -22,95 +26,11 @@ const MultiStepForm = () => {
         }}
       >
         {({ values }) => (
-          <Form className="text-center" autoComplete="off">
-            <div id="step1" className="mt-10 rounded-md shadow-md border-2 p-4">
-              <div id="my-radio-group">
-                Hai un tetto di almeno 2500m<sup>2</sup> a un uso non
-                residenziale?
-              </div>
-              <div role="group" aria-labelledby="my-radio-group">
-                <label>
-                  <Field type="radio" name="tetto" value="Si" required />
-                  Si
-                </label>
-                <label>
-                  <Field type="radio" name="tetto" value="No" required />
-                  No
-                </label>
-              </div>
-            </div>
-            <div id="step2" className="mt-10 rounded-md shadow-md border-2">
-              <Map />
-            </div>
-            <div id="step3" className="mt-10 rounded-md shadow-md border-2 p-4">
-              <div id="my-radio-group">
-                Il tetto è in amianto o ne contiene in parte?
-              </div>
-              <div role="group" aria-labelledby="my-radio-group">
-                <label>
-                  <Field type="radio" name="amianto" value="Si" required />
-                  Si
-                </label>
-                <label>
-                  <Field type="radio" name="amianto" value="No" required />
-                  No
-                </label>
-              </div>
-            </div>
-            <div
-              id="step4"
-              className="mt-10 rounded-md shadow-md border-2 p-4 flex flex-wrap"
-            >
-              <Field
-                type="text"
-                name="nome"
-                label="nome"
-                className="w-full"
-                placeholder="Nome"
-                required
-              />
-              <Field
-                type="text"
-                name="cognome"
-                label="cognome"
-                className="w-full"
-                placeholder="Cognome"
-                required
-              />
-              <div className="w-full">
-                <Field
-                  type="email"
-                  name="email"
-                  label="email"
-                  placeholder="Email"
-                  required
-                />
-                <ErrorMessage name="email" component="div" />
-              </div>
-              <div className="w-full">
-                <Field
-                  type="tel"
-                  name="telefono"
-                  label="telefono"
-                  placeholder="Telefono"
-                />
-                <ErrorMessage name="telefono" component="div" />
-              </div>
-              <div className="flex items-center space-x-2">
-                <p>
-                  Accetta la nostra{" "}
-                  <a href="https://www.prova.com" className="underline">
-                    Privacy Policy
-                  </a>
-                </p>
-                <Field
-                  type="checkbox"
-                  name="privacy"
-                  required
-                  label={{ label: "Accetta la nostra privacy policy" }}
-                />
-              </div>
-            </div>
+          <Form className="text-center" autoComplete="on">
+            <Step1 />
+            <Step2 />
+            <Step3 />
+            <Step4 />
 
             <button
               type="submit"
