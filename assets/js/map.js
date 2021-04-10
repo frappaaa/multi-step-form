@@ -1,8 +1,10 @@
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZnJhbmNlc2NvbHVwcGkiLCJhIjoiY2s0NWo0ejB1MDk5cDNncW9xcmUwb2ZzciJ9.RjXp_UnISsKM1WfxdAqB-A";
+  "pk.eyJ1IjoiZnJhbmNlc2NvbHVwcGkiLCJhIjoiY2tuMzBhd3pyMTFxajJ1bHJxajV6bTdnZiJ9.dO_oLJys8zuPkTqbf5zTlA";
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v11",
+  center: [12.489301137982158, 41.91097016686327],
+  zoom: 4.5,
 });
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
@@ -46,7 +48,7 @@ function updateArea(e) {
     // restrict to area to 2 decimal points
     var rounded_area = Math.round(area * 100) / 100;
     answer.innerHTML =
-      "<p><strong>" + rounded_area + "</strong></p><p>m<sup>2</sup></p>";
+      "<p><strong>" + rounded_area + " m<sup>2</sup></strong></p>";
   } else {
     answer.innerHTML = "";
     if (e.type !== "draw.delete")

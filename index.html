@@ -52,7 +52,8 @@
           value="Grazie per averci contattato"
         />
 
-        <input type="hidden" name="_subject" value="New submission!" />
+        <input type="hidden" name="_subject" value="Nuovo invio!" />
+        <input type="hidden" name="_template" value="basic" />
         <div class="tab">
           <h2>Hai un tetto di almeno 2.500m2 ad uso non residenziale?</h2>
           <div class="radio-button">
@@ -68,7 +69,7 @@
         <div class="tab">
           <h2>Individua il tuo tetto su Gmaps e tracciane l'area</h2>
           <div class="calculation-box">
-            <div id="map" style="width: 100%; height: 300px"></div>
+            <div id="map"></div>
             <p>Disegna l'area con gli strumenti qui accanto</p>
             <div id="calculated-area"></div>
           </div>
@@ -128,7 +129,7 @@
         <div style="overflow: auto">
           <div style="float: right">
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">
-              Precedente
+              Previous
             </button>
             <button type="button" id="nextBtn" onclick="nextPrev(1)">
               Next
@@ -147,5 +148,5 @@
     </div>
   </body>
   <script type="text/javascript" src="./assets/js/map.js"></script>
-  <script type="text/javascript" src="./assets/js/main.js"></script>
+  <!-- <script type="text/javascript" src="./assets/js/main.js"></script> -->
 </html>
