@@ -58,7 +58,7 @@ function updateArea(e) {
     answer.innerHTML =
       '<p><strong><input type="number" name="Area tetto" class="text-center bg-transparent" value="' +
       rounded_area +
-      '" disabled/> m<sup>2</sup></strong></p>';
+      '" /> m<sup>2</sup></strong></p>';
   } else {
     answer.innerHTML += "";
     if (e.type !== "draw.delete")
