@@ -1,0 +1,12 @@
+body .tab {
+  display: none;
+  min-height: 400px;
+}
+
+body .step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000;
+}
+/*# sourceMappingURL=style.css.map */
