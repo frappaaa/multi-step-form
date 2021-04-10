@@ -50,12 +50,15 @@ map.on("draw.update", updateArea);
 function updateArea(e) {
   let data = draw.getAll();
   let answer = document.getElementById("calculated-area");
+
   if (data.features.length > 0) {
     let area = turf.area(data);
     // restrict to area to 2 decimal points
     let rounded_area = Math.round(area * 100) / 100;
     answer.innerHTML =
-      "<p><strong>" + rounded_area + " m<sup>2</sup></strong></p>";
+      '<p><strong><input type="number" name="Area tetto" class="text-center bg-transparent" value="' +
+      rounded_area +
+      '" disabled/> m<sup>2</sup></strong></p>';
   } else {
     answer.innerHTML += "";
     if (e.type !== "draw.delete")
