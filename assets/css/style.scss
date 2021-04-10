@@ -42,4 +42,9 @@ body {
   #submit {
     display: none;
   }
+
+  /*Per evitare che triggeri il submit del form*/
+  button.mapboxgl-ctrl-attrib-button {
+    pointer-events: none !important;
+  }
 }

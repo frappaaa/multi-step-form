@@ -1,3 +1,7 @@
+body {
+  /*Per evitare che triggeri il submit del form*/
+}
+
 body .tab {
   display: none;
   min-height: 400px;
@@ -47,5 +51,9 @@ body .step {
 
 body #submit {
   display: none;
+}
+
+body button.mapboxgl-ctrl-attrib-button {
+  pointer-events: none !important;
 }
 /*# sourceMappingURL=style.css.map */
