@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
         service: 'Gmail'
         auth:{
          user:'francescoluppi2@gmail.com',
-         pass: ''
+         pass: 'tiqgev-7wuwce-dEwgyd'
     }
     });
 
