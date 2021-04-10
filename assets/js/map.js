@@ -6,6 +6,7 @@ var map = new mapboxgl.Map({
   center: [12.489301137982158, 41.91097016686327],
   zoom: 4.5,
 });
+
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
 var draw = new MapboxDraw({
@@ -23,6 +24,7 @@ map.addControl(
   }),
   "top-left"
 );
+
 //Aggiunto il controllo per la posizione attuale dell'utente
 map.addControl(
   new mapboxgl.GeolocateControl({
@@ -42,6 +44,7 @@ map.on("draw.update", updateArea);
 
 function updateArea(e) {
   var data = draw.getAll();
+  console.log(data);
   var answer = document.getElementById("calculated-area");
   if (data.features.length > 0) {
     var area = turf.area(data);
