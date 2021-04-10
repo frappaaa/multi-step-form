@@ -56,7 +56,7 @@ function updateArea(e) {
     // restrict to area to 2 decimal points
     let rounded_area = Math.round(area * 100) / 100;
     answer.innerHTML =
-      '<p><strong><input type="number" name="Area tetto" class="text-center bg-transparent" value="' +
+      '<p><strong><input type="number" name="Area tetto in m2" class="text-center bg-transparent" value="' +
       rounded_area +
       '" /> m<sup>2</sup></strong></p>';
   } else {
