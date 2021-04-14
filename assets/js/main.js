@@ -1,6 +1,10 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+//Set grandezza mappa
+var canvaMap = document.querySelector(".mapboxgl-canvas");
+canvaMap.style.width = "100%";
+
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var tab = document.getElementsByClassName("tab");
@@ -50,15 +54,15 @@ function validateForm() {
   tab = document.getElementsByClassName("tab");
   y = tab[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
-    }
-  }
+  // for (i = 0; i < y.length; i++) {
+  //   // If a field is empty...
+  //   if (y[i].value == "") {
+  //     // add an "invalid" class to the field:
+  //     y[i].className += " invalid";
+  //     // and set the current valid status to false:
+  //     valid = false;
+  //   }
+  // }
 
   return valid; // return the valid status
 }

@@ -68,13 +68,14 @@ function updateArea(e) {
 
 //Seleziona stile mappa
 var layerList = document.getElementById("menu");
-var inputs = layerList.getElementsByTagName("input");
-
-function switchLayer(layer) {
-  var layerId = layer.target.id;
-  map.setStyle("mapbox://styles/mapbox/" + layerId);
-}
+var inputs = layerList.getElementsByClassName("stile-mappa");
 
 for (var i = 0; i < inputs.length; i++) {
-  inputs[i].onclick = switchLayer;
+  inputs[i].addEventListener("click", function (e) {
+    map.setStyle("mapbox://styles/mapbox/" + this.getAttribute("aria-style"));
+  });
 }
+
+map.on("load", function () {
+  map.resize();
+});

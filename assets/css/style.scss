@@ -3,8 +3,11 @@ body {
     display: none;
     min-height: 400px;
     #map {
-      width: 100%;
-      height: 600px;
+      min-height: 300px;
+      canvas {
+        width: 100%;
+        height: 300px;
+      }
     }
     .radio-button {
       position: relative;
