@@ -20,6 +20,10 @@ var draw = new MapboxDraw({
   defaultMode: "draw_polygon",
 });
 
+map.on("load", function () {
+  map.resize();
+});
+
 //Aggiungo controllo per la barra di ricerca dei luoghi
 map.addControl(
   new MapboxGeocoder({
@@ -75,7 +79,3 @@ for (var i = 0; i < inputs.length; i++) {
     map.setStyle("mapbox://styles/mapbox/" + this.getAttribute("aria-style"));
   });
 }
-
-map.on("load", function () {
-  map.resize();
-});

@@ -58,8 +58,34 @@
         <input type="hidden" name="_subject" value="Nuovo invio!" />
         <input type="hidden" name="_template" value="basic" />
         <div class="rounded-2xl shadow-lg bg-white min-w-sceen-lg">
+          <div class="tab relative">
+            <div
+              class="bg-white p-2 rounded-md text-center flex justify-around"
+              id="menu"
+            >
+              <p
+                aria-style="satellite-v9"
+                class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
+              >
+                satellite
+              </p>
+              <p
+                aria-style="streets-v11"
+                class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
+              >
+                street
+              </p>
+            </div>
+            <div id="map" class="rounded-md" width="600" height="600"></div>
+            <div
+              id="calculated-area"
+              class="my-8 m-2 absolute inset-x-0 bottom-0 bg-white bg-opacity-50 p-4 rounded-md text-center"
+            >
+              <p>Disegna l'area con gli strumenti qui sopra</p>
+            </div>
+          </div>
           <div class="tab h-full content-center p-6">
-            <h2 class="text-4xl text-center">
+            <h2 class="text-3xl text-center">
               Hai un tetto di almeno 2.500m<sup>2</sup> ad uso non residenziale?
             </h2>
             <div class="flex p-4 justify-around">
@@ -92,37 +118,10 @@
             </div>
           </div>
 
-          <div class="tab relative" style="min-width: 400px">
-            <div class="calculation-box">
-              <div
-                class="bg-white p-2 rounded-md text-center flex justify-around"
-                id="menu"
-              >
-                <p
-                  aria-style="satellite-v9"
-                  class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-                >
-                  satellite
-                </p>
-                <p
-                  aria-style="streets-v11"
-                  class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-                >
-                  street
-                </p>
-              </div>
-              <div id="map" class="rounded-md"></div>
-              <div
-                id="calculated-area"
-                class="my-8 m-2 absolute inset-x-0 bottom-0 bg-white bg-opacity-50 p-4 rounded-md text-center"
-              >
-                <p>Disegna l'area con gli strumenti qui sopra</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab">
-            <h2>Il tetto è in amianto o ne contiene in parte?</h2>
+          <div class="tab p-4">
+            <h2 class="text-3xl">
+              Il tetto è in amianto o ne contiene in parte?
+            </h2>
             <div class="flex p-4 justify-around">
               <div class="radio-button border-2 rounded-md px-5 py-3">
                 <input
@@ -153,37 +152,41 @@
             </div>
           </div>
 
-          <div class="tab">
-            <h2>Lasciaci i tuoi contatti</h2>
-            <input
-              type="text"
-              name="Nome"
-              placeholder="Nome"
-              class="border-2 rounded-md"
-              required
-            />
-            <input
-              type="text"
-              name="Cognome"
-              placeholder="Cognome"
-              class="border-2 rounded-md"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              class="border-2 rounded-md"
-              required
-            />
-            <input
-              type="tel"
-              name="telefono"
-              placeholder="Telefono"
-              class="border-2 rounded-md"
-              required
-            />
-            <div class="privacy flex flex-wrap items-center space-x-2">
+          <div class="tab p-4">
+            <h2 class="text-3xl">Lasciaci i tuoi contatti</h2>
+            <div class="flex mt-4 space-x-2">
+              <input
+                type="text"
+                name="Nome"
+                placeholder="Nome"
+                class="border-2 rounded-md"
+                required
+              />
+              <input
+                type="text"
+                name="Cognome"
+                placeholder="Cognome"
+                class="border-2 rounded-md"
+                required
+              />
+            </div>
+            <div class="flex mt-4 space-x-2">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="border-2 rounded-md"
+                required
+              />
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="Telefono"
+                class="border-2 rounded-md"
+                required
+              />
+            </div>
+            <div class="privacy flex flex-wrap items-center space-x-2 mt-4">
               <input type="checkbox" name="Privacy Policy" required />
               <label for="privacy"
                 >Accetta la nostra
@@ -193,33 +196,34 @@
           </div>
         </div>
 
-        <div style="overflow: auto" class="mt-10">
-          <div class="flex justify-between text-right flex-wrap">
-            <button
-              type="button"
-              class="border-2 rounded-md bg-blue-300 px-4 py-2"
-              id="prevBtn"
-              onclick="nextPrev(-1)"
-            >
-              Precedente
-            </button>
-            <button
-              type="submit"
-              id="submit"
-              id="submit"
-              class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
-            >
-              Invia
-            </button>
-            <button
-              type="button"
-              class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
-              id="nextBtn"
-              onclick="nextPrev(1)"
-            >
-              Successivo
-            </button>
-          </div>
+        <div
+          style="overflow: auto; float: right; width: 100%"
+          class="mt-10 flex flex-wrap justify-between"
+        >
+          <button
+            type="button"
+            class="border-2 rounded-md bg-blue-300 px-4 py-2"
+            id="prevBtn"
+            onclick="nextPrev(-1)"
+          >
+            Precedente
+          </button>
+          <button
+            type="submit"
+            id="submit"
+            id="submit"
+            class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
+          >
+            Invia
+          </button>
+          <button
+            type="button"
+            class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
+            id="nextBtn"
+            onclick="nextPrev(1)"
+          >
+            Successivo
+          </button>
         </div>
       </form>
     </div>

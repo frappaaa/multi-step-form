@@ -5,15 +5,11 @@ body {
 body .tab {
   display: none;
   min-height: 400px;
+  min-width: 600px;
 }
 
 body .tab #map {
-  min-height: 300px;
-}
-
-body .tab #map canvas {
-  width: 100%;
-  height: 300px;
+  min-height: 600px;
 }
 
 body .tab .radio-button {
