@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi Step Form</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <link
@@ -17,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="h-screen p-4 bg-yellow-100">
+  <body>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.js"></script>
     <link
@@ -37,7 +33,7 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-    <div class="grid place-content-center h-full">
+    <div>
       <form
         action="https://formsubmit.co/2894dde2acbd3c5ec4fbe737a85aaf84"
         method="POST"
@@ -57,171 +53,136 @@
 
         <input type="hidden" name="_subject" value="Nuovo invio!" />
         <input type="hidden" name="_template" value="basic" />
-        <div class="rounded-2xl shadow-lg bg-white min-w-sceen-lg">
-          <div class="tab relative">
-            <div
-              class="bg-white p-2 rounded-md text-center flex justify-around"
-              id="menu"
-            >
-              <p
-                aria-style="satellite-v9"
-                class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-              >
-                satellite
-              </p>
-              <p
-                aria-style="streets-v11"
-                class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-              >
-                street
-              </p>
-            </div>
-            <div id="map" class="rounded-md" width="600" height="600"></div>
-            <div
-              id="calculated-area"
-              class="my-8 m-2 absolute inset-x-0 bottom-0 bg-white bg-opacity-50 p-4 rounded-md text-center"
-            >
-              <p>Disegna l'area con gli strumenti qui sopra</p>
-            </div>
-          </div>
-          <div class="tab h-full content-center p-6">
-            <h2 class="text-3xl text-center">
-              Hai un tetto di almeno 2.500m<sup>2</sup> ad uso non residenziale?
-            </h2>
-            <div class="flex p-4 justify-around">
-              <div class="radio-button border-2 rounded-md px-5 py-3">
-                <input
-                  type="radio"
-                  name="Hai un tetto di almeno 2.500m2 ad uso non residenziale?"
-                  value="SI"
-                  required
-                />
-                <label
-                  class="uppercase text-2xl rounded-md"
-                  for="Hai un tetto di almeno 2.500m2 ad uso non residenziale?"
-                  ><p>Si</p></label
-                >
-              </div>
-              <div class="radio-button border-2 rounded-md px-5 py-3">
-                <input
-                  type="radio"
-                  name="Hai un tetto di almeno 2.500m2 ad uso non residenziale?"
-                  value="NO"
-                  required
-                />
-                <label
-                  class="uppercase text-2xl rounded-md"
-                  for="Hai un tetto di almeno 2.500m2 ad uso non residenziale?"
-                  ><p>No</p></label
-                >
-              </div>
-            </div>
-          </div>
 
-          <div class="tab p-4">
-            <h2 class="text-3xl">
-              Il tetto è in amianto o ne contiene in parte?
-            </h2>
-            <div class="flex p-4 justify-around">
-              <div class="radio-button border-2 rounded-md px-5 py-3">
-                <input
-                  type="radio"
-                  name="Il tetto è in amianto o ne contiene in parte?"
-                  value="SI"
-                  required
-                />
-                <label
-                  class="uppercase text-2xl rounded-md"
-                  for="Il tetto è in amianto o ne contiene in parte?"
-                  ><p>Si</p></label
-                >
-              </div>
-              <div class="radio-button border-2 rounded-md px-5 py-3">
-                <input
-                  type="radio"
-                  name="Il tetto è in amianto o ne contiene in parte?"
-                  value="NO"
-                  required
-                />
-                <label
-                  class="uppercase text-2xl rounded-md"
-                  for="Il tetto è in amianto o ne contiene in parte?"
-                  ><p>No</p></label
-                >
-              </div>
-            </div>
+        
+        <div class="tab">
+          <h2>Possiedi un capannone non residenziale?</h2>
+          <label for="Possiedi un capannone non residenziale?">
+            <input
+              type="radio"
+              name="Possiedi un capannone non residenziale?"
+            />Si</label
+          >
+          <label for="Possiedi un capannone non residenziale?">
+            <input
+              type="radio"
+              name="Possiedi un capannone non residenziale?"
+            />No</label
+          >
+        </div>
+        <div class="tab">
+          <h2>Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?</h2>
+          <label
+            for="Il tetto del capannone è grande almeno 2000 metri quadrati?"
+          >
+            <input
+              type="radio"
+              name="Il tetto del capannone è grande almeno 2000 metri quadrati?"
+            />Si</label
+          >
+          <label
+            for="Il tetto del capannone è grande almeno 2000 metri quadrati?"
+          >
+            <input
+              type="radio"
+              name="Il tetto del capannone è grande almeno 2000 metri quadrati?"
+            />No</label
+          >
+        </div>
+        <div class="tab">
+          <h2>É presente amianto da smaltire sulla copertura?</h2>
+          <label for="É presente amianto da smaltire sulla copertura?">
+            <input
+              type="radio"
+              name="É presente amianto da smaltire sulla copertura?"
+            />Si</label
+          >
+          <label for="É presente amianto da smaltire sulla copertura?">
+            <input
+              type="radio"
+              name="É presente amianto da smaltire sulla copertura?"
+            />No</label
+          >
+        </div>
+        <div class="tab">
+          <h2>Hai un mutuo o un leasing sull’immobile?</h2>
+          <label for="Hai un mutuo o un leasing sull’immobile?">
+            <input
+              type="radio"
+              name="Hai un mutuo o un leasing sull’immobile?"
+            />Si</label
+          >
+          <label for="Hai un mutuo o un leasing sull’immobile?">
+            <input
+              type="radio"
+              name="Hai un mutuo o un leasing sull’immobile?"
+            />No</label
+          >
+        </div>
+        <div class="tab">
+          <h2>Ci sono consumi derivanti dall’attività sottostante?</h2>
+          <label for="Ci sono consumi derivanti dall’attività sottostante?">
+            <input
+              type="radio"
+              name="Ci sono consumi derivanti dall’attività sottostante?"
+            />Si</label
+          >
+          <label for="Ci sono consumi derivanti dall’attività sottostante?">
+            <input
+              type="radio"
+              name="Ci sono consumi derivanti dall’attività sottostante?"
+            />No</label
+          ><br>
+          <label for="consumo"
+            >Indica il consumo elettrico annuo approssimativo</label
+          >
+          <input type="number" name="consumo" />
+        </div>
+        <div class="tab">
+          <label for="anno">Indica l'anno di costruzione del capannone</labe>
+          <input type="date" name="anno">
+        </div>
+        <div class="tab mappa">
+          <div
+            class="bg-white p-2 rounded-md text-center flex justify-around"
+            id="menu"
+          >
+            <p
+              aria-style="satellite-v9"
+              class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
+            >
+              satellite
+            </p>
+            <p
+              aria-style="streets-v11"
+              class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
+            >
+              street
+            </p>
           </div>
-
-          <div class="tab p-4">
-            <h2 class="text-3xl">Lasciaci i tuoi contatti</h2>
-            <div class="flex mt-4 space-x-2">
-              <input
-                type="text"
-                name="Nome"
-                placeholder="Nome"
-                class="border-2 rounded-md"
-                required
-              />
-              <input
-                type="text"
-                name="Cognome"
-                placeholder="Cognome"
-                class="border-2 rounded-md"
-                required
-              />
-            </div>
-            <div class="flex mt-4 space-x-2">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                class="border-2 rounded-md"
-                required
-              />
-              <input
-                type="tel"
-                name="telefono"
-                placeholder="Telefono"
-                class="border-2 rounded-md"
-                required
-              />
-            </div>
-            <div class="privacy flex flex-wrap items-center space-x-2 mt-4">
-              <input type="checkbox" name="Privacy Policy" required />
-              <label for="privacy"
-                >Accetta la nostra
-                <a href="#" target="_blank">Privacy Policy</a></label
-              >
-            </div>
+          <div id="map" class="rounded-md" width="600" height="600"></div>
+          <div
+            id="calculated-area"
+            class="my-8 m-2 absolute inset-x-0 bottom-0 bg-white bg-opacity-50 p-4 rounded-md text-center"
+          >
+            <p>Disegna l'area con gli strumenti qui sopra</p>
           </div>
         </div>
+        <div class="tab">
+          <h2>Scrivi i tuoi dati per ricevere la nostra proposta ed iniziare a guadagnare con noi</h2>
+          <input type="text" name="nome" id="nome">
+          <input type="text" name="cognome" id="cognome">
+          <input type="email" name="email" id="email">
+          <input type="tel" name="telefono" id="telefono">
+        </div>
 
-        <div
-          style="overflow: auto; float: right; width: 100%"
-          class="mt-10 flex flex-wrap justify-between"
-        >
-          <button
-            type="button"
-            class="border-2 rounded-md bg-blue-300 px-4 py-2"
-            id="prevBtn"
-            onclick="nextPrev(-1)"
-          >
+
+        <div class="buttons">
+          <button type="button" id="prevBtn">
             Precedente
           </button>
-          <button
-            type="submit"
-            id="submit"
-            id="submit"
-            class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
-          >
-            Invia
-          </button>
-          <button
-            type="button"
-            class="border-2 rounded-md bg-blue-700 px-4 py-2 text-white"
-            id="nextBtn"
-            onclick="nextPrev(1)"
-          >
+          <button type="submit" id="submit" id="submit">Invia</button>
+          <button type="button" id="nextBtn">
             Successivo
           </button>
         </div>
