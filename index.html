@@ -1,194 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multi Step Form</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.css"
-      type="text/css"
-    />
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
-      type="text/css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi Step Form</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- Promise polyfill script is required -->
-    <!-- to use Mapbox GL Geocoder in IE 11. -->
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+</head>
 
-    <div>
-      <form
-        action="https://formsubmit.co/2894dde2acbd3c5ec4fbe737a85aaf84"
-        method="POST"
-        class="multi-step-form max-w-screen-lg m-auto mt-10"
-      >
-        <input type="hidden" name="_template" value="table" />
-        <input
-          type="hidden"
-          name="_next"
-          value="https://frappaaa.github.io/multi-step-form/thank-you"
-        />
-        <input
-          type="hidden"
-          name="_autoresponse"
-          value="Ecco il riepilogo di quanto inserito nel form"
-        />
+<body>
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.css"
+    type="text/css" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js">
+  </script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+    type="text/css" />
 
-        <input type="hidden" name="_subject" value="Nuovo invio!" />
-        <input type="hidden" name="_template" value="basic" />
+  <!-- Promise polyfill script is required -->
+  <!-- to use Mapbox GL Geocoder in IE 11. -->
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-        
-        <div class="tab">
-          <h2>Possiedi un capannone non residenziale?</h2>
+  <div class="form-container">
+    <form action="https://formsubmit.co/2894dde2acbd3c5ec4fbe737a85aaf84" method="POST"
+      class="multi-step-form max-w-screen-lg m-auto mt-10">
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://frappaaa.github.io/multi-step-form/thank-you" />
+      <input type="hidden" name="_autoresponse" value="Ecco il riepilogo di quanto inserito nel form" />
+
+      <input type="hidden" name="_subject" value="Nuovo invio!" />
+      <input type="hidden" name="_template" value="basic" />
+
+
+      <div class="tab">
+        <h2>Possiedi un capannone non residenziale?</h2>
+        <div class="options">
           <label for="Possiedi un capannone non residenziale?">
-            <input
-              type="radio"
-              name="Possiedi un capannone non residenziale?"
-            />Si</label
-          >
+            <input type="radio" name="Possiedi un capannone non residenziale?" />Si</label>
           <label for="Possiedi un capannone non residenziale?">
-            <input
-              type="radio"
-              name="Possiedi un capannone non residenziale?"
-            />No</label
-          >
+            <input type="radio" name="Possiedi un capannone non residenziale?" />No</label>
         </div>
-        <div class="tab">
-          <h2>Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?</h2>
-          <label
-            for="Il tetto del capannone è grande almeno 2000 metri quadrati?"
-          >
-            <input
-              type="radio"
-              name="Il tetto del capannone è grande almeno 2000 metri quadrati?"
-            />Si</label
-          >
-          <label
-            for="Il tetto del capannone è grande almeno 2000 metri quadrati?"
-          >
-            <input
-              type="radio"
-              name="Il tetto del capannone è grande almeno 2000 metri quadrati?"
-            />No</label
-          >
+      </div>
+      <div class="tab">
+        <h2>Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?</h2>
+        <div class="options">
+          <label for="Il tetto del capannone è grande almeno 2000 metri quadrati?">
+            <input type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />Si</label>
+          <label for="Il tetto del capannone è grande almeno 2000 metri quadrati?">
+            <input type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />No</label>
         </div>
-        <div class="tab">
-          <h2>É presente amianto da smaltire sulla copertura?</h2>
+      </div>
+      <div class="tab">
+        <h2>É presente amianto da smaltire sulla copertura?</h2>
+        <div class="options">
           <label for="É presente amianto da smaltire sulla copertura?">
-            <input
-              type="radio"
-              name="É presente amianto da smaltire sulla copertura?"
-            />Si</label
-          >
+            <input type="radio" name="É presente amianto da smaltire sulla copertura?" />Si</label>
           <label for="É presente amianto da smaltire sulla copertura?">
-            <input
-              type="radio"
-              name="É presente amianto da smaltire sulla copertura?"
-            />No</label
-          >
-        </div>
-        <div class="tab">
-          <h2>Hai un mutuo o un leasing sull’immobile?</h2>
+            <input type="radio" name="É presente amianto da smaltire sulla copertura?" />No</label></div>
+      </div>
+      <div class="tab">
+        <h2>Hai un mutuo o un leasing sull’immobile?</h2>
+        <div class="options"><label for="Hai un mutuo o un leasing sull’immobile?">
+            <input type="radio" name="Hai un mutuo o un leasing sull’immobile?" />Si</label>
           <label for="Hai un mutuo o un leasing sull’immobile?">
-            <input
-              type="radio"
-              name="Hai un mutuo o un leasing sull’immobile?"
-            />Si</label
-          >
-          <label for="Hai un mutuo o un leasing sull’immobile?">
-            <input
-              type="radio"
-              name="Hai un mutuo o un leasing sull’immobile?"
-            />No</label
-          >
-        </div>
-        <div class="tab">
-          <h2>Ci sono consumi derivanti dall’attività sottostante?</h2>
+            <input type="radio" name="Hai un mutuo o un leasing sull’immobile?" />No</label></div>
+      </div>
+      <div class="tab">
+        <h2>Ci sono consumi derivanti dall’attività sottostante?</h2>
+        <div class="options"><label for="Ci sono consumi derivanti dall’attività sottostante?">
+            <input type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />Si</label>
           <label for="Ci sono consumi derivanti dall’attività sottostante?">
-            <input
-              type="radio"
-              name="Ci sono consumi derivanti dall’attività sottostante?"
-            />Si</label
-          >
-          <label for="Ci sono consumi derivanti dall’attività sottostante?">
-            <input
-              type="radio"
-              name="Ci sono consumi derivanti dall’attività sottostante?"
-            />No</label
-          ><br>
-          <label for="consumo"
-            >Indica il consumo elettrico annuo approssimativo</label
-          >
-          <input type="number" name="consumo" />
-        </div>
-        <div class="tab">
-          <label for="anno">Indica l'anno di costruzione del capannone</labe>
+            <input type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />No</label></div><br>
+        <label for="consumo">Indica il consumo elettrico annuo approssimativo</label>
+        <input type="number" name="consumo" />
+      </div>
+      <div class="tab">
+        <label for="anno">Indica l'anno di costruzione del capannone</labe>
           <input type="date" name="anno">
+      </div>
+      <div class="tab mappa">
+        <div id="menu">
+          <p aria-style="satellite-v9" class="stile-mappa">
+            satellite
+          </p>
+          <p aria-style="streets-v11" class="stile-mappa">
+            street
+          </p>
         </div>
-        <div class="tab mappa">
-          <div
-            class="bg-white p-2 rounded-md text-center flex justify-around"
-            id="menu"
-          >
-            <p
-              aria-style="satellite-v9"
-              class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-            >
-              satellite
-            </p>
-            <p
-              aria-style="streets-v11"
-              class="stile-mappa border-2 rounded-md focus-within\:bg-blue-200 cursor-pointer px-4 py-3"
-            >
-              street
-            </p>
-          </div>
-          <div id="map" class="rounded-md" width="600" height="600"></div>
-          <div
-            id="calculated-area"
-            class="my-8 m-2 absolute inset-x-0 bottom-0 bg-white bg-opacity-50 p-4 rounded-md text-center"
-          >
+        <div id="map">
+          <div id="calculated-area">
             <p>Disegna l'area con gli strumenti qui sopra</p>
           </div>
         </div>
-        <div class="tab">
-          <h2>Scrivi i tuoi dati per ricevere la nostra proposta ed iniziare a guadagnare con noi</h2>
-          <input type="text" name="nome" id="nome">
-          <input type="text" name="cognome" id="cognome">
-          <input type="email" name="email" id="email">
-          <input type="tel" name="telefono" id="telefono">
+        
+      </div>
+      <div class="tab">
+        <h2>Scrivi i tuoi dati per ricevere la nostra proposta ed iniziare a guadagnare con noi</h2>
+        <div class="options">
+          <label for="nome">Nome<input type="text" name="nome" id="nome"></label>
+          <label for="cognome">Cognome<input type="text" name="cognome" id="cognome"></label>
+          <label for="email">Email<input type="email" name="email" id="email"></label>
+          <label for="telefono">Telefono<input type="tel" name="telefono" id="telefono"></label>
         </div>
+      </div>
 
 
-        <div class="buttons">
-          <button type="button" id="prevBtn">
-            Precedente
-          </button>
-          <button type="submit" id="submit" id="submit">Invia</button>
-          <button type="button" id="nextBtn">
-            Successivo
-          </button>
-        </div>
-      </form>
-    </div>
-  </body>
-  <script type="text/javascript" src="./assets/js/map.js"></script>
-  <script type="text/javascript" src="./assets/js/main.js"></script>
+      <div class="buttons">
+        <button type="button" id="prevBtn">
+          Precedente
+        </button>
+        <button type="submit" id="submit" id="submit">Invia</button>
+        <button type="button" id="nextBtn">
+          Successivo
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+<script type="text/javascript" src="./assets/js/map.js"></script>
+<script type="text/javascript" src="./assets/js/main.js"></script>
+
 </html>
