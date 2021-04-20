@@ -63,4 +63,12 @@ body div.form-container form .tab.mappa #map #calculated-area input[type="number
   font-size: 1.3em;
   max-width: 135px;
 }
+
+body div.form-container form .buttons {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 /*# sourceMappingURL=style.css.map */

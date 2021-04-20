@@ -43,47 +43,49 @@
         <h2>Possiedi un capannone non residenziale?</h2>
         <div class="options">
           <label for="Possiedi un capannone non residenziale?">
-            <input type="radio" name="Possiedi un capannone non residenziale?" />Si</label>
+            <input required type="radio" name="Possiedi un capannone non residenziale?" />Si</label>
           <label for="Possiedi un capannone non residenziale?">
-            <input type="radio" name="Possiedi un capannone non residenziale?" />No</label>
+            <input required type="radio" name="Possiedi un capannone non residenziale?" />No</label>
         </div>
       </div>
       <div class="tab">
         <h2>Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?</h2>
         <div class="options">
           <label for="Il tetto del capannone è grande almeno 2000 metri quadrati?">
-            <input type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />Si</label>
+            <input required type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />Si</label>
           <label for="Il tetto del capannone è grande almeno 2000 metri quadrati?">
-            <input type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />No</label>
+            <input required type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />No</label>
         </div>
       </div>
       <div class="tab">
         <h2>É presente amianto da smaltire sulla copertura?</h2>
         <div class="options">
           <label for="É presente amianto da smaltire sulla copertura?">
-            <input type="radio" name="É presente amianto da smaltire sulla copertura?" />Si</label>
+            <input required type="radio" name="É presente amianto da smaltire sulla copertura?" />Si</label>
           <label for="É presente amianto da smaltire sulla copertura?">
-            <input type="radio" name="É presente amianto da smaltire sulla copertura?" />No</label></div>
+            <input required type="radio" name="É presente amianto da smaltire sulla copertura?" />No</label></div>
       </div>
       <div class="tab">
         <h2>Hai un mutuo o un leasing sull’immobile?</h2>
         <div class="options"><label for="Hai un mutuo o un leasing sull’immobile?">
-            <input type="radio" name="Hai un mutuo o un leasing sull’immobile?" />Si</label>
+            <input required type="radio" name="Hai un mutuo o un leasing sull’immobile?" />Si</label>
           <label for="Hai un mutuo o un leasing sull’immobile?">
-            <input type="radio" name="Hai un mutuo o un leasing sull’immobile?" />No</label></div>
+            <input required type="radio" name="Hai un mutuo o un leasing sull’immobile?" />No</label></div>
       </div>
       <div class="tab">
         <h2>Ci sono consumi derivanti dall’attività sottostante?</h2>
         <div class="options"><label for="Ci sono consumi derivanti dall’attività sottostante?">
-            <input type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />Si</label>
+            <input required type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />Si</label>
           <label for="Ci sono consumi derivanti dall’attività sottostante?">
-            <input type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />No</label></div><br>
-        <label for="consumo">Indica il consumo elettrico annuo approssimativo</label>
-        <input type="number" name="consumo" />
+            <input required type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />No</label></div>
+        <br>
+        <label for="consumo">Indica il consumo elettrico annuo approssimativo<input type="number"
+            name="consumo" /></label>
+
       </div>
       <div class="tab">
         <label for="anno">Indica l'anno di costruzione del capannone</labe>
-          <input type="date" name="anno">
+          <input required type="date" name="anno">
       </div>
       <div class="tab mappa">
         <div id="menu">
@@ -99,15 +101,23 @@
             <p>Disegna l'area con gli strumenti qui sopra</p>
           </div>
         </div>
-        
+
       </div>
       <div class="tab">
         <h2>Scrivi i tuoi dati per ricevere la nostra proposta ed iniziare a guadagnare con noi</h2>
         <div class="options">
-          <label for="nome">Nome<input type="text" name="nome" id="nome"></label>
-          <label for="cognome">Cognome<input type="text" name="cognome" id="cognome"></label>
-          <label for="email">Email<input type="email" name="email" id="email"></label>
-          <label for="telefono">Telefono<input type="tel" name="telefono" id="telefono"></label>
+          <label for="nome">Nome
+            <input required type="text" name="nome" id="nome">
+          </label>
+          <label for="cognome">Cognome
+            <input required type="text" name="cognome" id="cognome">
+          </label>
+          <label for="email">Email
+            <input required type="email" name="email" id="email">
+          </label>
+          <label for="telefono">Telefono
+            <input required type="tel" name="telefono" id="telefono">
+          </label>
         </div>
       </div>
 
