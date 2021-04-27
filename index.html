@@ -39,7 +39,7 @@
       <input type="hidden" name="_template" value="basic" />
 
 
-      <div class="tab">
+      <div id="tab-1" class="tab">
         <h2>Possiedi un capannone non residenziale?</h2>
         <div class="options">
           <label for="Possiedi un capannone non residenziale?">
@@ -48,7 +48,7 @@
             <input required type="radio" name="Possiedi un capannone non residenziale?" />No</label>
         </div>
       </div>
-      <div class="tab">
+      <div id="tab-2" class="tab">
         <h2>Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?</h2>
         <div class="options">
           <label for="Il tetto del capannone è grande almeno 2000 metri quadrati?">
@@ -57,7 +57,7 @@
             <input required type="radio" name="Il tetto del capannone è grande almeno 2000 metri quadrati?" />No</label>
         </div>
       </div>
-      <div class="tab">
+      <div id="tab-3" class="tab">
         <h2>É presente amianto da smaltire sulla copertura?</h2>
         <div class="options">
           <label for="É presente amianto da smaltire sulla copertura?">
@@ -65,14 +65,14 @@
           <label for="É presente amianto da smaltire sulla copertura?">
             <input required type="radio" name="É presente amianto da smaltire sulla copertura?" />No</label></div>
       </div>
-      <div class="tab">
+      <div id="tab-4" class="tab">
         <h2>Hai un mutuo o un leasing sull’immobile?</h2>
         <div class="options"><label for="Hai un mutuo o un leasing sull’immobile?">
             <input required type="radio" name="Hai un mutuo o un leasing sull’immobile?" />Si</label>
           <label for="Hai un mutuo o un leasing sull’immobile?">
             <input required type="radio" name="Hai un mutuo o un leasing sull’immobile?" />No</label></div>
       </div>
-      <div class="tab">
+      <div id="tab-5" class="tab">
         <h2>Ci sono consumi derivanti dall’attività sottostante?</h2>
         <div class="options"><label for="Ci sono consumi derivanti dall’attività sottostante?">
             <input required type="radio" name="Ci sono consumi derivanti dall’attività sottostante?" />Si</label>
@@ -83,11 +83,11 @@
             name="consumo" /></label>
 
       </div>
-      <div class="tab">
+      <div id="tab-6" class="tab">
         <label for="anno">Indica l'anno di costruzione del capannone</labe>
           <input required type="date" name="anno">
       </div>
-      <div class="tab mappa">
+      <div id="tab-7" class="tab mappa">
         <div id="menu">
           <p aria-style="satellite-v9" class="stile-mappa">
             satellite
@@ -103,7 +103,7 @@
         </div>
 
       </div>
-      <div class="tab">
+      <div id="tab-8" class="tab">
         <h2>Scrivi i tuoi dati per ricevere la nostra proposta ed iniziare a guadagnare con noi</h2>
         <div class="options">
           <label for="nome">Nome
@@ -123,13 +123,13 @@
 
 
       <div class="buttons">
-        <button type="button" id="prevBtn">
+        <a id="prev">
           Precedente
-        </button>
+        </a>
         <button type="submit" id="submit" id="submit">Invia</button>
-        <button type="button" id="nextBtn">
+        <a id="next">
           Successivo
-        </button>
+        </a>
       </div>
     </form>
   </div>
