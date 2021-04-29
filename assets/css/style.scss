@@ -1,7 +1,12 @@
+:root {
+  font-size: 16px;
+}
+
 body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: "Titillium Web", sans-serif;
   div.form-container {
     max-height: 100vh;
     overflow: auto;
@@ -15,28 +20,23 @@ body {
         &.mappa {
           position: relative;
           #menu {
+            max-width: 400px;
+            width: 100%;
             display: flex;
-            & > p {
-              border: 1px solid #000;
-              border-radius: 20px;
-              padding: 5px 10px;
-              cursor: pointer;
-              &:not(:last-child) {
-                margin-right: 10px;
-              }
-            }
+            justify-content: space-around;
+            padding-bottom: 10px;
+            margin: 0 auto;
           }
           #map {
             position: relative;
             width: 700px;
-            height: 600px;
+            height: 500px;
             #calculated-area {
               position: absolute;
               bottom: 50px;
-              left: 20px;
               padding: 10px 20px;
               z-index: 1;
-              border-radius: 20px;
+              border-radius: 0px;
               background-color: rgba(255, 255, 255, 0.7);
               input[type="number"] {
                 pointer-events: none;
@@ -49,12 +49,98 @@ body {
             }
           }
         }
+        & .options {
+          display: flex;
+          flex-direction: row;
+        }
       }
       .buttons {
         position: absolute;
-        bottom: 40px;
+        bottom: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        z-index: 100;
+        a,
+        button[type="submit"] {
+          background-color: #145da8;
+          border: 0;
+          padding: 20px 50px;
+          font-size: 1em;
+        }
+        a:visited,
+        a:link {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*GLOBALI*/
+.btn {
+  cursor: pointer;
+  background-color: #2d87e0;
+  padding: 5px 15px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 35px;
+  border: 0;
+  font-size: 1em;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"] {
+      border: 0;
+      border-bottom: 2px solid #6595c1;
+      padding: 5px;
+      &:focus {
+        outline: 1px solid #6595c1;
+      }
+    }
+    input[type="radio"] {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: scale(3) translate(-50%, -50%);
+      cursor: pointer;
+      & + p {
+        z-index: 2;
+        background-color: #fff;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-content: center;
+        pointer-events: none;
+        cursor: pointer;
+      }
+      &:checked + p {
+        background-color: #84b4e2;
+        color: #fff;
       }
     }
   }

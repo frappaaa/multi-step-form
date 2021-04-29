@@ -16,8 +16,10 @@ function checkTab() {
 
   if (currentTab == tabs.length) {
     next.style.display = "none";
+    submit.style.display = "unset";
   } else {
     next.style.display = "unset";
+    submit.style.display = "none";
   }
 }
 

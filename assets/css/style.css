@@ -1,7 +1,12 @@
+:root {
+  font-size: 16px;
+}
+
 body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body div.form-container {
@@ -23,35 +28,29 @@ body div.form-container form .tab.mappa {
 }
 
 body div.form-container form .tab.mappa #menu {
+  max-width: 400px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-body div.form-container form .tab.mappa #menu > p {
-  border: 1px solid #000;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-body div.form-container form .tab.mappa #menu > p:not(:last-child) {
-  margin-right: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 10px;
+  margin: 0 auto;
 }
 
 body div.form-container form .tab.mappa #map {
   position: relative;
   width: 700px;
-  height: 600px;
+  height: 500px;
 }
 
 body div.form-container form .tab.mappa #map #calculated-area {
   position: absolute;
   bottom: 50px;
-  left: 20px;
   padding: 10px 20px;
   z-index: 1;
-  border-radius: 20px;
+  border-radius: 0px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -64,11 +63,134 @@ body div.form-container form .tab.mappa #map #calculated-area input[type="number
   max-width: 135px;
 }
 
+body div.form-container form .tab .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 body div.form-container form .buttons {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 100;
+}
+
+body div.form-container form .buttons a,
+body div.form-container form .buttons button[type="submit"] {
+  background-color: #145da8;
+  border: 0;
+  padding: 20px 50px;
+  font-size: 1em;
+}
+
+body div.form-container form .buttons a:visited,
+body div.form-container form .buttons a:link {
+  text-decoration: none;
+}
+
+/*GLOBALI*/
+.btn {
+  cursor: pointer;
+  background-color: #2d87e0;
+  padding: 5px 15px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 35px;
+  border: 0;
+  font-size: 1em;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 10px;
+}
+
+.options label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.options label input[type="text"],
+.options label input[type="email"],
+.options label input[type="tel"],
+.options label input[type="date"],
+.options label input[type="number"] {
+  border: 0;
+  border-bottom: 2px solid #6595c1;
+  padding: 5px;
+}
+
+.options label input[type="text"]:focus,
+.options label input[type="email"]:focus,
+.options label input[type="tel"]:focus,
+.options label input[type="date"]:focus,
+.options label input[type="number"]:focus {
+  outline: 1px solid #6595c1;
+}
+
+.options label input[type="radio"] {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(3) translate(-50%, -50%);
+          transform: scale(3) translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.options label input[type="radio"] + p {
+  z-index: 2;
+  background-color: #fff;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.options label input[type="radio"]:checked + p {
+  background-color: #84b4e2;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
