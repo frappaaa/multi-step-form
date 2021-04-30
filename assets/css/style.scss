@@ -2,6 +2,9 @@ $blue: #145da8;
 $azzurro: #6595c1;
 $black: #00011c;
 $white: #fff;
+
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
+
 /* GENERAL */
 body {
   background: #f7f9ff;
@@ -127,12 +130,7 @@ button#submit-btn {
   text-align: center;
   color: $white;
   border: 0;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 35px;
 }
 
 button#prev-btn:after,
