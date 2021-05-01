@@ -7,11 +7,11 @@ let preloader = document.getElementById("preloader-wrapper");
 let bodyElement = document.querySelector("body");
 let succcessDiv = document.getElementById("success");
 
-form.onsubmit = () => {
-  return false;
-};
+// form.onsubmit = () => {
+//   return false;
+// };
 let current_step = 0;
-let stepCount = 8;
+let stepCount = step.length - 1;
 step[current_step].classList.add("d-block");
 if (current_step == 0) {
   prevBtn.classList.add("d-none");
