@@ -53,9 +53,15 @@
         <!-- TITLE -->
         <div class="col-lg-4 offset-lg-1 mx-0 px-0">
           <div id="title-container">
-            <h2>COVID-19</h2>
-            <h3>Self Checker Form</h3>
-            <p>Misura le dimensione del tuo capannone per risparmiare</p>
+            <h2>Titolo</h2>
+            <h3>Sottotitolo</h3>
+            <p>
+              Descrizione della funzione del multi step form Lorem, ipsum dolor
+              sit amet consectetur adipisicing elit. Nesciunt deserunt,
+              recusandae tempora quo sint dolor mollitia, voluptatum earum
+              necessitatibus illo quos in fugit quas nobis aut fuga expedita
+              nihil eum!
+            </p>
           </div>
         </div>
         <!-- FORMS -->
@@ -80,37 +86,36 @@
             >
               <div id="steps-container">
                 <div class="step">
-                  <h4>
-                    Have you recently been in close contact with someone who has
-                    COVID-19?
-                  </h4>
+                  <h4>Possiedi un capannone non residenziale?</h4>
                   <div class="form-check ps-0 q-box">
                     <div class="q-box__question">
                       <input
+                        checked
                         class="form-check-input question__input"
                         id="q_1_yes"
-                        name="q_1"
+                        name="capannone_residenziale"
                         type="radio"
-                        value="Yes"
+                        value="Si"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_1_yes"
+                        for="capannone_residenziale"
                         >Si</label
                       >
                     </div>
                     <div class="q-box__question">
                       <input
-                        checked
                         class="form-check-input question__input"
                         id="q_1_no"
                         name="q_1"
                         type="radio"
                         value="No"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_1_no"
+                        for="capannone_residenziale"
                         >No</label
                       >
                     </div>
@@ -118,58 +123,130 @@
                 </div>
                 <div class="step">
                   <h4>
-                    Are you experiencing a high fever, dry cough, tiredness and
-                    loss of taste or smell?
+                    Il tetto del capannone è grande almeno 2000 m<sup>2</sup>?
                   </h4>
                   <div class="form-check ps-0 q-box">
                     <div class="q-box__question">
                       <input
+                        checked
                         class="form-check-input question__input"
                         id="q_2_yes"
-                        name="q_2"
+                        name="capannone_grande_almeno_2000m2"
                         type="radio"
-                        value="Yes"
+                        value="Si"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_2_yes"
+                        for="capannone_grande_almeno_2000m2"
                         >Si</label
                       >
                     </div>
                     <div class="q-box__question">
                       <input
-                        checked
                         class="form-check-input question__input"
                         id="q_2_no"
-                        name="q_2"
+                        name="capannone_grande_almeno_2000m2"
                         type="radio"
                         value="No"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_2_no"
+                        for="capannone_grande_almeno_2000m2"
                         >No</label
                       >
                     </div>
                   </div>
                 </div>
                 <div class="step">
-                  <h4>
-                    Are you having diarrhoea, stomach pain, conjunctivitis,
-                    vomiting and headache?
-                  </h4>
+                  <h4>É presente amianto da smaltire sulla copertura?</h4>
+                  <div class="form-check ps-0 q-box">
+                    <div class="q-box__question">
+                      <input
+                        checked
+                        class="form-check-input question__input"
+                        id="q_3_yes"
+                        name="presenta_amianto"
+                        type="radio"
+                        value="Si"
+                        required
+                      />
+                      <label
+                        class="form-check-label question__label"
+                        for="presenta_amianto"
+                        >Si</label
+                      >
+                    </div>
+                    <div class="q-box__question">
+                      <input
+                        class="form-check-input question__input"
+                        id="q_3_no"
+                        name="presenta_amianto"
+                        type="radio"
+                        value="No"
+                        required
+                      />
+                      <label
+                        class="form-check-label question__label"
+                        for="presenta_amianto"
+                        >No</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="step">
+                  <h4>Hai un mutuo o un leasing sull’immobile?</h4>
+                  <div class="form-check ps-0 q-box">
+                    <div class="q-box__question">
+                      <input
+                        checked
+                        class="form-check-input question__input"
+                        id="q_3_yes"
+                        name="mutuo"
+                        type="radio"
+                        value="Si"
+                        required
+                      />
+                      <label
+                        class="form-check-label question__label"
+                        for="mutuo"
+                        >Si</label
+                      >
+                    </div>
+                    <div class="q-box__question">
+                      <input
+                        class="form-check-input question__input"
+                        id="q_3_no"
+                        name="mutuo"
+                        type="radio"
+                        value="No"
+                        required
+                      />
+                      <label
+                        class="form-check-label question__label"
+                        for="mutuo"
+                        >No</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step">
+                  <h4>Ci sono consumi derivanti dall’attività sottostante?</h4>
                   <div class="form-check ps-0 q-box">
                     <div class="q-box__question">
                       <input
                         class="form-check-input question__input"
                         id="q_3_yes"
-                        name="q_3"
+                        name="consumi_attività"
                         type="radio"
-                        value="Yes"
+                        value="Si"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_3_yes"
+                        for="consumi_attività"
                         >Si</label
                       >
                     </div>
@@ -178,220 +255,66 @@
                         checked
                         class="form-check-input question__input"
                         id="q_3_no"
-                        name="q_3"
+                        name="consumi_attività"
                         type="radio"
                         value="No"
+                        required
                       />
                       <label
                         class="form-check-label question__label"
-                        for="q_3_no"
+                        for="consumi_attività"
                         >No</label
                       >
                     </div>
                   </div>
+                  <h4>Indica il consumo elettrico annuo approssimativo</h4>
+                  <div class="form-check ps-0 q-box">
+                    <div class="q-box__question">
+                      <input
+                        class="question__input"
+                        id="q_5_num"
+                        name="numero_consumo"
+                        type="number"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="step">
-                  <h4>
-                    Have you traveled to any of these countries with the highest
-                    number of COVID-19 cases in the world for the past 2 weeks?
-                  </h4>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input q-checkbox"
-                            id="q_4_uk"
-                            name="q_4"
-                            type="checkbox"
-                            value="uk"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_uk"
-                            >UK</label
-                          >
-                        </div>
-                      </div>
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_us"
-                            name="q_4"
-                            type="checkbox"
-                            value="us"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_us"
-                            >US</label
-                          >
-                        </div>
-                      </div>
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_br"
-                            name="q_3"
-                            type="checkbox"
-                            value="br"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_br"
-                            >Brazil</label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_de"
-                            name="q_4"
-                            type="checkbox"
-                            value="de"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_de"
-                            >Germany</label
-                          >
-                        </div>
-                      </div>
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_in"
-                            name="q_4"
-                            type="checkbox"
-                            value="in"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_in"
-                            >India</label
-                          >
-                        </div>
-                      </div>
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_eu"
-                            name="q_4"
-                            type="checkbox"
-                            value="eu"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_eu"
-                            >Europe</label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-check ps-0 q-box">
-                        <div class="q-box__question">
-                          <input
-                            class="form-check-input question__input"
-                            id="q_4_none"
-                            name="q_4"
-                            type="checkbox"
-                            value="none"
-                          />
-                          <label
-                            class="form-check-label question__label"
-                            for="q_4_none"
-                            >I did not travelled to any of these
-                            countries</label
-                          >
-                        </div>
+                  <h4>Indica l'anno di costruzione del capannone</h4>
+                  <div class="form-check ps-0 q-box">
+                    <div class="q-box__question">
+                      <div class="mt-1">
+                        <input
+                          class="form-control"
+                          id="anno"
+                          name="anno_costruzione"
+                          type="date"
+                          required
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="step">
-                  <h4>
-                    Are you experiencing any of these serious symptoms of
-                    COVID-19 below?
-                  </h4>
-                  <div class="row">
-                    <div class="form-check ps-0 q-box">
-                      <div class="q-box__question">
-                        <input
-                          class="form-check-input question__input"
-                          id="q_5_breathing"
-                          name="q_5_breathing"
-                          type="checkbox"
-                          value="breathing"
-                        />
-                        <label
-                          class="form-check-label question__label"
-                          for="q_5_breathing"
-                          >Difficulty breathing or shortness of breath</label
-                        >
-                      </div>
-                    </div>
-                    <div class="form-check ps-0 q-box">
-                      <div class="q-box__question">
-                        <input
-                          class="form-check-input question__input"
-                          id="q_5_chest"
-                          name="q_5_chest"
-                          type="checkbox"
-                          value="chest pain"
-                        />
-                        <label
-                          class="form-check-label question__label"
-                          for="q_5_chest"
-                          >Chest pain or pressure</label
-                        >
-                      </div>
-                    </div>
-                    <div class="form-check ps-0 q-box">
-                      <div class="q-box__question">
-                        <input
-                          class="form-check-input question__input"
-                          id="q_5_speech"
-                          name="q_5_speech"
-                          type="checkbox"
-                          value="speech problem"
-                        />
-                        <label
-                          class="form-check-label question__label"
-                          for="q_5_speech"
-                          >Loss of speech or movement</label
-                        >
-                      </div>
-                    </div>
-                    <div class="form-check ps-0 q-box">
-                      <div class="q-box__question">
-                        <input
-                          class="form-check-input question__input"
-                          id="q_5_pale"
-                          name="q_5_pale"
-                          type="checkbox"
-                          value="pale"
-                        />
-                        <label
-                          class="form-check-label question__label"
-                          for="q_5_pale"
-                          >Pale, gray or blue-colored skin, lips or nail
-                          beds</label
-                        >
-                      </div>
+                  <div id="menu">
+                    <a aria-style="satellite-v9" class="stile-mappa btn">
+                      satellite
+                    </a>
+                    <a aria-style="streets-v11" class="stile-mappa btn">
+                      street
+                    </a>
+                  </div>
+                  <div id="map">
+                    <div id="calculated-area">
+                      <p>Disegna l'area con gli strumenti qui sopra</p>
                     </div>
                   </div>
                 </div>
                 <div class="step">
-                  <h4>Provide us with your personal information:</h4>
+                  <h4>
+                    Scrivi i tuoi dati per ricevere la nostra proposta ed
+                    iniziare a guadagnare con noi
+                  </h4>
                   <div class="mt-1">
                     <label class="form-label">Nome e Cognome:</label>
                     <input
@@ -470,9 +393,9 @@
                 </div>
               </div>
               <div id="q-box__buttons">
-                <button id="prev-btn" type="button">Previous</button>
-                <button id="next-btn" type="button">Next</button>
-                <button id="submit-btn" type="submit">Submit</button>
+                <button id="prev-btn" type="button">Precedente</button>
+                <button id="next-btn" type="button">Successivo</button>
+                <button id="submit-btn" type="submit">invia</button>
               </div>
             </form>
           </div>
