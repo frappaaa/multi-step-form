@@ -48,6 +48,18 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
+    <div class="map">
+      <div id="menu">
+        <a aria-style="satellite-v9" class="stile-mappa btn"> satellite </a>
+        <a aria-style="streets-v11" class="stile-mappa btn"> street </a>
+      </div>
+      <div id="map" style="width: 100%; height: 700px">
+        <div id="calculated-area">
+          <p>Disegna l'area con gli strumenti qui sopra</p>
+        </div>
+      </div>
+    </div>
+
     <div class="container d-flex align-items-center min-vh-100">
       <div class="row g-0 justify-content-center">
         <!-- TITLE -->
@@ -99,6 +111,7 @@
 
               <input type="hidden" name="_subject" value="Nuovo invio!" />
               <input type="hidden" name="_template" value="basic" />
+
               <div id="steps-container">
                 <div class="step">
                   <h4>Possiedi un capannone non residenziale?</h4>
@@ -282,16 +295,20 @@
                       >
                     </div>
                   </div>
-                  <h4>Indica il consumo elettrico annuo approssimativo</h4>
-                  <div class="form-check ps-0 q-box">
-                    <div class="q-box__question">
-                      <div class="mt-1">
-                        <input
-                          class="form-control"
-                          id="numero_consumo"
-                          name="numero_consumo"
-                          type="number"
-                        />
+                  <div class="q_6 d-none">
+                    <h4>
+                      Indica il consumo elettrico annuo approssimativo (in kWh)
+                    </h4>
+                    <div class="form-check ps-0 q-box">
+                      <div class="q-box__question">
+                        <div class="mt-1">
+                          <input
+                            class="form-control"
+                            id="numero_consumo"
+                            name="numero_consumo"
+                            type="number"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -312,21 +329,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="step">
-                  <div id="menu">
-                    <a aria-style="satellite-v9" class="stile-mappa btn">
-                      satellite
-                    </a>
-                    <a aria-style="streets-v11" class="stile-mappa btn">
-                      street
-                    </a>
-                  </div>
-                  <div id="map">
-                    <div id="calculated-area">
-                      <p>Disegna l'area con gli strumenti qui sopra</p>
-                    </div>
-                  </div>
-                </div>
+                <div class="step mappa"></div>
                 <div class="step">
                   <h4>
                     Scrivi i tuoi dati per ricevere la nostra proposta ed

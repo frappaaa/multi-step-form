@@ -96,3 +96,32 @@ submitBtn.addEventListener("click", () => {
       succcessDiv.classList.add("d-block");
     });
 });
+
+/*Controllo domanda 5 */
+
+let q5 = document.querySelectorAll(
+  'input[type=radio][name="consumi_attività"]'
+);
+
+let q6 = document.getElementsByClassName("q_6")[0];
+function consumi() {
+  if (q5[0].checked) {
+    q6.classList.add("d-block");
+    q6.classList.remove("d-none");
+  } else {
+    q6.classList.add("d-none");
+    q6.classList.remove("d-block");
+  }
+}
+
+q5.forEach((radio) =>
+  radio.addEventListener("change", () => {
+    if (radio.value === "Si") {
+      q6.classList.add("d-block");
+      q6.classList.remove("d-none");
+    } else {
+      q6.classList.add("d-none");
+      q6.classList.remove("d-block");
+    }
+  })
+);
