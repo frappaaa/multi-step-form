@@ -41,7 +41,7 @@ label {
   background-image: -webkit-gradient(linear, left top, right top, from(#192027), to(#6595c1)), url(../img/sfondo_side_text.jpeg);
   background-image: linear-gradient(to right, #192027, #6595c1), url(../img/sfondo_side_text.jpeg);
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-blend-mode: soft-light;
   text-align: center;
   padding: 105px 28px 28px 28px;
