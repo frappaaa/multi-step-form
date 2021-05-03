@@ -6,6 +6,7 @@ let form = document.getElementsByTagName("form")[0];
 let preloader = document.getElementById("preloader-wrapper");
 let bodyElement = document.querySelector("body");
 let succcessDiv = document.getElementById("success");
+let boxMappa = document.querySelector("div.map");
 
 // form.onsubmit = () => {
 //   return false;
@@ -39,6 +40,9 @@ nextBtn.addEventListener("click", () => {
       nextBtn.classList.remove("d-inline-block");
       nextBtn.classList.add("d-none");
     }
+  } else if (current_step == 7) {
+    boxMappa.style.opacity = 1;
+    boxMappa.style.pointerEvents = "none";
   } else {
     if (current_step > stepCount) {
       form.onsubmit = () => {

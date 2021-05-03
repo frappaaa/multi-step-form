@@ -45,6 +45,11 @@ label {
   height: 100%;
   color: $white;
   background-color: $blue;
+  background-image: linear-gradient(to right, #192027, $azzurro),
+    url(../img/sfondo_side_text.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
   text-align: center;
   padding: 105px 28px 28px 28px;
   box-sizing: border-box;
@@ -76,37 +81,36 @@ label {
   margin-bottom: 15px;
 }
 
-/*MAPPA
+/*MAPPA*/
 
 .map {
-  opacity: 1;
   position: absolute;
   width: 100%;
   height: 90%;
+  #menu {
+    display: flex;
+    justify-content: space-around;
+  }
   #map {
-    width: 100%;
-    height: 100%;
-  }
-}
-*/
-
-#calculated-area {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.644);
-  width: fit-content;
-  height: fit-content;
-  z-index: 10;
-  padding: 10px;
-  border-radius: 20px;
-  p {
-    margin: 0;
-  }
-  input[type="number"] {
-    border: 0px;
-    pointer-events: none;
+    #calculated-area {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.644);
+      width: fit-content;
+      height: fit-content;
+      z-index: 10;
+      padding: 10px;
+      border-radius: 20px;
+      p {
+        margin: 0;
+      }
+      input[type="number"] {
+        border: 0px;
+        pointer-events: none;
+      }
+    }
   }
 }
 
@@ -116,11 +120,14 @@ label {
   background: url(../img/corona.png);
   background-repeat: repeat;
   position: relative;
-  padding: 62px;
+  padding: 31px;
   min-height: 630px;
   box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
   -webkit-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
   -moz-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
+  form {
+    position: relative;
+  }
 }
 
 #steps-container {

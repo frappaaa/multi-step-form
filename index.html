@@ -48,18 +48,6 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
-    <div class="map">
-      <div id="menu">
-        <a aria-style="satellite-v9" class="stile-mappa btn"> satellite </a>
-        <a aria-style="streets-v11" class="stile-mappa btn"> street </a>
-      </div>
-      <div id="map" style="width: 100%; height: 500px">
-        <div id="calculated-area">
-          <p>Disegna l'area con gli strumenti qui sopra</p>
-        </div>
-      </div>
-    </div>
-
     <div class="container d-flex align-items-center min-vh-100">
       <div class="row g-0 justify-content-center">
         <!-- TITLE -->
@@ -112,6 +100,21 @@
               <input type="hidden" name="_subject" value="Nuovo invio!" />
               <input type="hidden" name="_template" value="basic" />
 
+              <div class="map" style="opacity: 0; pointer-events: none">
+                <div id="menu">
+                  <a aria-style="satellite-v9" class="stile-mappa btn">
+                    satellite
+                  </a>
+                  <a aria-style="streets-v11" class="stile-mappa btn">
+                    street
+                  </a>
+                </div>
+                <div id="map" style="width: 100%; height: 100%">
+                  <div id="calculated-area">
+                    <p>Disegna l'area con gli strumenti qui sopra</p>
+                  </div>
+                </div>
+              </div>
               <div id="steps-container">
                 <div class="step">
                   <h4>Possiedi un capannone non residenziale?</h4>
