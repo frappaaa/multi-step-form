@@ -131,6 +131,7 @@ label {
 
 .map #map #calculated-area p {
   margin: 0;
+  line-height: unset;
 }
 
 .map #map #calculated-area input[type="number"] {
