@@ -24,6 +24,16 @@ const progress = (value) => {
   document.getElementsByClassName("progress-bar")[0].style.width = `${value}%`;
 };
 
+function checkIfMap(current_step) {
+  if (current_step === 6) {
+    boxMappa.style.opacity = 1;
+    boxMappa.style.pointerEvents = "unset";
+  } else {
+    boxMappa.style.opacity = 0;
+    boxMappa.style.pointerEvents = "none";
+  }
+}
+
 nextBtn.addEventListener("click", () => {
   current_step++;
   let previous_step = current_step - 1;
@@ -34,15 +44,13 @@ nextBtn.addEventListener("click", () => {
     step[current_step].classList.add("d-block");
     step[previous_step].classList.remove("d-block");
     step[previous_step].classList.add("d-none");
+    checkIfMap(current_step);
     if (current_step == stepCount) {
       submitBtn.classList.remove("d-none");
       submitBtn.classList.add("d-inline-block");
       nextBtn.classList.remove("d-inline-block");
       nextBtn.classList.add("d-none");
     }
-  } else if (current_step == 7) {
-    boxMappa.style.opacity = 1;
-    boxMappa.style.pointerEvents = "none";
   } else {
     if (current_step > stepCount) {
       form.onsubmit = () => {
@@ -63,6 +71,7 @@ prevBtn.addEventListener("click", () => {
     step[current_step].classList.add("d-block");
     step[previous_step].classList.remove("d-block");
     step[previous_step].classList.add("d-none");
+    checkIfMap(current_step);
     if (current_step < stepCount) {
       submitBtn.classList.remove("d-inline-block");
       submitBtn.classList.add("d-none");

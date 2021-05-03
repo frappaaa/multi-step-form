@@ -2,7 +2,7 @@ $blue: #145da8;
 $azzurro: #6595c1;
 $black: #00011c;
 $white: #fff;
-
+$blu-scuro: #192027;
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
 
 /* GENERAL */
@@ -45,7 +45,7 @@ label {
   height: 100%;
   color: $white;
   background-color: $blue;
-  background-image: linear-gradient(to right, #192027, $azzurro),
+  background-image: linear-gradient(to right, darken($blue, 20%), $azzurro),
     url(../img/sfondo_side_text.jpeg);
   background-size: cover;
   background-position: center bottom;

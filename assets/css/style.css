@@ -38,8 +38,8 @@ label {
   height: 100%;
   color: #fff;
   background-color: #145da8;
-  background-image: -webkit-gradient(linear, left top, right top, from(#192027), to(#6595c1)), url(../img/sfondo_side_text.jpeg);
-  background-image: linear-gradient(to right, #192027, #6595c1), url(../img/sfondo_side_text.jpeg);
+  background-image: -webkit-gradient(linear, left top, right top, from(#092b4d), to(#6595c1)), url(../img/sfondo_side_text.jpeg);
+  background-image: linear-gradient(to right, #092b4d, #6595c1), url(../img/sfondo_side_text.jpeg);
   background-size: cover;
   background-position: center bottom;
   background-blend-mode: soft-light;
