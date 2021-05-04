@@ -25,7 +25,3 @@ cancella.setAttribute(
   "title",
   "3. Cancella l'area disegnata se vuoi segnare un'altra"
 );
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
