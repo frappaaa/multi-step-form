@@ -27,14 +27,14 @@ mappaEl.appendChild(startBtn);
 let avvia = document.querySelector(".startBtn button.play");
 let escTut = document.querySelector(".startBtn button.close");
 
-// if (localStorage.getItem("closeTut") !== null) {
-//   if (localStorage.getItem("closeTut") === "true") {
-//     startBtn.style.display = "none";
-//   }
-// } else {
-//   localStorage.setItem("closeTut", "false");
-//   startBtn.style.display = "grid";
-// }
+if (localStorage.getItem("closeTut") !== null) {
+  if (localStorage.getItem("closeTut") === "true") {
+    startBtn.style.display = "none";
+  }
+} else {
+  localStorage.setItem("closeTut", "false");
+  startBtn.style.display = "grid";
+}
 
 /*AVVIA Tutorial */
 avvia.addEventListener("click", (e) => {
@@ -58,10 +58,10 @@ avvia.addEventListener("click", (e) => {
     cancella.appendChild(tooltip);
     cancella.classList.add("bordoTut");
   }, 10000);
-  // setTimeout(() => {
-  //   cancella.removeChild(tooltip);
-  //   cancella.classList.remove("bordoTut");
-  // }, 13000);
+  setTimeout(() => {
+    cancella.removeChild(tooltip);
+    cancella.classList.remove("bordoTut");
+  }, 13000);
 });
 
 escTut.addEventListener("click", (e) => {
