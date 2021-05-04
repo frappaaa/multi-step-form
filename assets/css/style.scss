@@ -118,6 +118,7 @@ label {
       background-image: radial-gradient($blue, #ffffff00);
       display: grid;
       place-content: center;
+      gap: 10px;
       button {
         background-color: $white;
         border-radius: 35px;
@@ -127,17 +128,28 @@ label {
         line-height: 24px;
         padding: 10px 20px;
         position: relative;
-        &:after {
-          content: "\00D7";
-          color: $blue;
-          font-size: 2em;
-          position: absolute;
-          top: -7px;
-          left: 100%;
-          // background-color: $white;
-          // border-radius: 50%;
-        }
       }
+      // span {
+      //   color: $blue;
+      //   font-size: 2em;
+      //   background-color: $white;
+      //   border-radius: 50%;
+      //   position: absolute;
+      //   padding: 12px 5px;
+      //   top: -15px;
+      //   left: 95%;
+      //   width: 25px;
+      //   height: 25px;
+      //   display: grid;
+      //   place-content: center;
+      //   p {
+      //     margin: 0;
+      //   }
+      // }
+    }
+
+    .bordoTut {
+      border: 3px solid $blue;
     }
 
     .mapboxgl-ctrl-geocoder--icon-search {
@@ -145,10 +157,14 @@ label {
       left: unset;
     }
     /*TOOLTIPS*/
-    .tooltip {
+    .tooltip-tut {
       position: absolute;
-      top: 0;
-      left: 0;
+      background-color: #fff;
+      left: calc(100% + 10px);
+      width: 200px;
+      top: 0%;
+      padding: 3px 10px;
+      border-radius: 5px;
     }
     #calculated-area {
       position: absolute;
