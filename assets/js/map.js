@@ -4,7 +4,7 @@ mapboxgl.accessToken =
 //Crea mappa con MapBox
 var map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/satellite-v9",
+  style: "mapbox://styles/francescoluppi/cknc1acrp149w17p3sct3v2s5",
   center: [12.489301137982158, 41.91097016686327],
   zoom: 4.5,
 });
@@ -53,6 +53,41 @@ map.on("draw.update", updateArea);
 //Funzione per il calcolo dell'area in base alle modifiche a schermos
 function updateArea(e) {
   let data = draw.getAll();
+  // let coordinatesAll = "[";
+  let mapsURL = "http://maps.google.com/maps?q=";
+  let imageURL =
+    "https://api.mapbox.com/styles/v1/francescoluppi/cknc1acrp149w17p3sct3v2s5/static/";
+  for (
+    let i = 0;
+    i < data.features[0].geometry.coordinates[0].length - 1;
+    i++
+  ) {
+    // coordinatesAll += "[";
+    for (
+      let j = 0;
+      j < data.features[0].geometry.coordinates[0][i].length;
+      j++
+    ) {
+      if (j != data.features[0].geometry.coordinates[0][i].length - 1) {
+        // coordinatesAll += data.features[0].geometry.coordinates[0][i][j] + ",";
+        imageURL += `pin-l+387be5(${data.features[0].geometry.coordinates[0][i][j]},`;
+      } else {
+        // coordinatesAll += data.features[0].geometry.coordinates[0][i][j];
+        imageURL += `${data.features[0].geometry.coordinates[0][i][j]})`;
+      }
+    }
+    if (i != data.features[0].geometry.coordinates[0].length - 2) {
+      // coordinatesAll += "],";
+      imageURL += ",";
+      // } else coordinatesAll += "]";
+    }
+    // console.log(coordinatesAll + "]");
+  }
+  imageURL += "/auto/1000x900?padding=50&access_token=" + mapboxgl.accessToken;
+  mapsURL +=
+    data.features[0].geometry.coordinates[0][0][1] +
+    "," +
+    data.features[0].geometry.coordinates[0][0][0];
   let answer = document.getElementById("calculated-area");
 
   if (data.features.length > 0) {
@@ -62,7 +97,11 @@ function updateArea(e) {
     answer.innerHTML =
       '<p><strong><input type="number" name="Area tetto in m2" class="text-center bg-transparent" value="' +
       rounded_area +
-      '" /> m<sup>2</sup></strong></p>';
+      '" /> m<sup>2</sup></strong></p><div class="hidden"><input type="text" name="Link immagine area" class="text-center bg-transparent" value="' +
+      imageURL +
+      '" /> </div><div class="hidden"><input type="text" name="Link prima coordinata" class="text-center bg-transparent" value="' +
+      mapsURL +
+      '" /> </div>';
   } else {
     answer.innerHTML += "";
     if (e.type !== "draw.delete")
@@ -76,6 +115,6 @@ var inputs = layerList.getElementsByClassName("stile-mappa");
 
 for (var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener("click", function (e) {
-    map.setStyle("mapbox://styles/mapbox/" + this.getAttribute("aria-style"));
+    map.setStyle("mapbox://styles/" + this.getAttribute("aria-style"));
   });
 }
