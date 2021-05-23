@@ -51,26 +51,30 @@ map.on("draw.delete", updateArea);
 map.on("draw.update", updateArea);
 
 //Funzione per il calcolo dell'area in base alle modifiche a schermo
+
+let mapsURL = "http://maps.google.com/maps?q=";
+let imageURL =
+  "https://api.mapbox.com/styles/v1/francescoluppi/cknc1acrp149w17p3sct3v2s5/static/";
 function updateArea(e) {
   let data = draw.getAll();
-  let mapsURL = "http://maps.google.com/maps?q=";
-  let imageURL =
-    "https://api.mapbox.com/styles/v1/francescoluppi/cknc1acrp149w17p3sct3v2s5/static/path-1+294ac2-1+0f40b3(";
-  let coordinatesAll = new Array();
   for (
     let i = 0;
     i < data.features[0].geometry.coordinates[0].length - 1;
     i++
   ) {
-    coordinatesAll[i] = new Array(
-      Number(data.features[0].geometry.coordinates[0][i][1].toPrecision(9)),
-      Number(data.features[0].geometry.coordinates[0][i][0].toPrecision(9))
-    );
+    for (
+      let j = 0;
+      j < data.features[0].geometry.coordinates[0][i].length;
+      j++
+    ) {
+      if (j != data.features[0].geometry.coordinates[0][i].length - 1)
+        imageURL += `pin-l+387be5(${data.features[0].geometry.coordinates[0][i][j]},`;
+      else imageURL += `${data.features[0].geometry.coordinates[0][i][j]})`;
+    }
+    if (i != data.features[0].geometry.coordinates[0].length - 2)
+      imageURL += ",";
   }
-  imageURL +=
-    polyline.encode(coordinatesAll) +
-    ")/auto/1000x800@2x?before_layer=admin-0-boundary&padding=50&access_token=" +
-    mapboxgl.accessToken;
+  imageURL += "/auto/1000x900?padding=50&access_token=" + mapboxgl.accessToken;
   mapsURL +=
     data.features[0].geometry.coordinates[0][0][1] +
     "," +
